@@ -4,6 +4,8 @@ import com.example.service.prag.config.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "user_table")
 @AllArgsConstructor
@@ -11,7 +13,7 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-public class User extends BaseEntity {
+public class User extends BaseEntity  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id",nullable = false)

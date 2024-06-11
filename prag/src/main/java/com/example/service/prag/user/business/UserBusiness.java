@@ -1,6 +1,7 @@
 package com.example.service.prag.user.business;
 
 import com.example.service.prag.common.annotation.Business;
+import com.example.service.prag.user.controller.model.UserRequestDto;
 import com.example.service.prag.user.controller.model.UserResponse;
 import com.example.service.prag.user.converter.UserConverter;
 import com.example.service.prag.user.service.UserService;
@@ -28,5 +29,8 @@ public class UserBusiness {
     }
 
 
+    public UserResponse enrollUser(UserRequestDto userRequestDto) {
+        return userConverter.EntityToResponse(userService.enrollUserAll(userConverter.RequestToEntity(userRequestDto)));
 
+    }
 }
